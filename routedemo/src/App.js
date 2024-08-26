@@ -8,15 +8,21 @@ import Error from "./components/Error";
 export default function App() {
   return (
     <div>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Navbar />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+        <Route path="/admin" element={<Navbar />}>
+          <Route path="/admin" element={<Home />} />
+          <Route path="/admin/about" element={<About />} />
+        </Route>
+
         {/* error page will show page not found, if user is going to undefined page like "/sdfsafs" */}
-        {/* <Route path="*" element={<Error />} /> */}
+        <Route path="*" element={<Error />} />
 
         {/* Navigate is for unexpected token in url, it will navigate page Home page */}
-        <Route path="*" element={<Navigate to="/" />} />
+        {/* <Route path="*" element={<Navigate to="/" />} /> */}
       </Routes>
     </div>
   );

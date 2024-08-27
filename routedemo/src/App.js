@@ -4,6 +4,7 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Error from "./components/Error";
+import Contact from "./components/Contact";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/:id" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="/admin" element={<Navbar />}>
           <Route path="/admin" element={<Home />} />

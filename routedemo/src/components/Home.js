@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       This Is Home Page <br />
       <button
-        onClick={() => navigate("/contact", { state: { topic: "ReactJs" } })}>
+        onClick={() => navigate("/contact", { state: { topic: "ReactJs from Home" } })}>
         move to contact page
       </button>
     </div>

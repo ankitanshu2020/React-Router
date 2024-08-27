@@ -1,13 +1,35 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <div>
       <p>This Is Navbar Page</p>
-      {/* do not use a tag(refreshes page), Link tag will not refresh page*/}
-      <Link to="/">Home</Link> |<Link to="/about">About</Link> |
-      <Link to="/about/123">About ID</Link> |
+      {/* navlink will make it like active */}
+      <NavLink
+        style={({ isActive }) => {
+          return { color: isActive ? "red" : "" };
+        }}
+        to="/">
+        Home
+      </NavLink>
+      |
+      <NavLink
+        style={({ isActive }) => {
+          return { color: isActive ? "red" : "" };
+        }}
+        to="/about">
+        About
+      </NavLink>
+      |
+      <NavLink
+        style={({ isActive }) => {
+          return { color: isActive ? "red" : "" };
+        }}
+        to="/about/123">
+        About ID
+      </NavLink>
+      |
       <Link to="/contact" state={{ topic: "ReactJs from Navbar" }}>
         Contact Us
       </Link>

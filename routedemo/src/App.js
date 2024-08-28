@@ -11,14 +11,19 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/" element={<Navbar />}>
-          <Route path="/" element={<Home />} />
+          {/* index  OR  path=""  OR  path="/" will work same if parent have path="/"*/}
+          <Route index element={<Home />} />
+          {/* <Route path="" element={<Home />} />
+          <Route path="/" element={<Home />} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/about/:id" element={<About />} />
           <Route path="/contact/*" element={<Contact />} />
         </Route>
         <Route path="/admin" element={<Navbar />}>
-          <Route path="/admin" element={<Home />} />
-          <Route path="/admin/about" element={<About />} />
+          <Route index element={<Home />} />
+          {/* <Route path="/admin/about" element={<About />} /> */}
+          {/* ---------------------OR-------------------------- */}
+          <Route path="about" element={<About />} />
         </Route>
 
         {/* error page will show page not found, if user is going to undefined page like "/sdfsafs" */}

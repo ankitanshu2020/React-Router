@@ -11,23 +11,21 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/" element={<Navbar />}>
-          {/* index  OR  path=""  OR  path="/" will work same if parent have path="/"*/}
           <Route index element={<Home />} />
-          {/* <Route path="" element={<Home />} />
-          <Route path="/" element={<Home />} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/about/:id" element={<About />} />
           <Route path="/contact/*" element={<Contact />} />
         </Route>
+      </Routes>
+      <br />
+      <Routes>
         <Route path="/admin" element={<Navbar />}>
           <Route index element={<Home />} />
-          {/* <Route path="/admin/about" element={<About />} /> */}
-          {/* ---------------------OR-------------------------- */}
           <Route path="about" element={<About />} />
         </Route>
 
         {/* error page will show page not found, if user is going to undefined page like "/sdfsafs" */}
-        <Route path="*" element={<Error />} />
+        {/* <Route path="*" element={<Error />} /> */}
 
         {/* Navigate is for unexpected token in url, it will navigate page Home page */}
         {/* <Route path="*" element={<Navigate to="/" />} /> */}
